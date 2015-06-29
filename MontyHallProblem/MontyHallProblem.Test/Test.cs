@@ -5,16 +5,23 @@ namespace MontyHallProblem.Test
     [TestFixture]
     public class Test
     {
+        private Game _game;
+        
         [SetUp]
         public void SetUp()
         {
-            
+            _game = new Game();
         }
 
         [Test]
-        public void Test1()
+        public void InitGameReturns2GAnd1C()
         {
+            char[] expectedValues = {'G', 'G', 'C'};
+
+            _game.Init();
+            var values = _game.Doors.Values;
             
+            Assert.That(values, Is.EquivalentTo(expectedValues));
         }
     }
 }
