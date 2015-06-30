@@ -15,5 +15,10 @@ namespace MontyHallProblem
                 {3, 'G'}
             };
         }
+
+        public char PickDoor(int doorNumber)
+        {
+            return Doors[doorNumber];
+        }
     }
 }

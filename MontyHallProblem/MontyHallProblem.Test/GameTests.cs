@@ -3,7 +3,7 @@
 namespace MontyHallProblem.Test
 {
     [TestFixture]
-    public class Test
+    public class GameTests
     {
         private Game _game;
         
@@ -22,6 +22,12 @@ namespace MontyHallProblem.Test
             var values = _game.Doors.Values;
             
             Assert.That(values, Is.EquivalentTo(expectedValues));
+        }
+
+        [Test]
+        public void InitGameReturnsRandomInitialState()
+        {
+            
         }
     }
 }
