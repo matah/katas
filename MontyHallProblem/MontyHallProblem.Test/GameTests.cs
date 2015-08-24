@@ -25,9 +25,21 @@ namespace MontyHallProblem.Test
         }
 
         [Test]
-        public void InitGameReturnsRandomInitialState()
+        public void ShowDoorDoesNotReturnWinningDoor()
         {
+            _game.Init();
+            var shownDoor = _game.ShowDoor();
+
+            Assert.That(_game.Doors[shownDoor], Is.Not.EqualTo('C'));
+        }
+
+        [Test]
+        public void ShowDoorDoesNotReturnPickedDoor()
+        {
+            _game.Init();
+            var shownDoor = _game.ShowDoor();
             
+            Assert.That(shownDoor, Is.Not.EqualTo(_game.PickedDoor));
         }
     }
 }
